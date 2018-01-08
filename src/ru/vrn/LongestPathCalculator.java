@@ -89,7 +89,7 @@ public class LongestPathCalculator {
     private void testNeighborAndPutIntoQueue(SkiingMap map, int height, int width, SkiingSector original, Queue<Pair> queue) {
         SkiingSector neighborSector = map.getSectorsMap()[height][width];
         if (neighborSector.getNextSectorsCount() < original.getNextSectorsCount() + 1
-                || (neighborSector.getNextSectorsCount() == original.getNextSectorsCount())
+                || (neighborSector.getNextSectorsCount() == original.getNextSectorsCount() + 1)
                 && neighborSector.getLastSectorHeight() > original.getLastSectorHeight()) {
             neighborSector.setNextSectorsCount(original.getNextSectorsCount() + 1);
             neighborSector.setLastSectorHeight(original.getLastSectorHeight());
